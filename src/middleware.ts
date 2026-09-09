@@ -7,7 +7,7 @@ export const onRequest: MiddlewareHandler = async (context, next) => {
 	if (response.status === 404) {
 		return json(
 			{ error: 'not_found', path: context.url.pathname },
-			{ status: 404 }
+			{ request: context.request, status: 404, title: '404 · APIs' }
 		);
 	}
 
